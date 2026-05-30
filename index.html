@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ember's End</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="startScreen" class="overlay">
+      <div class="start-panel">
+        <p class="eyebrow">A tiny 3D adventure</p>
+        <h1>Ember's End</h1>
+        <p class="intro">
+          Flick has one sunset to return three Core Embers and wake the Great Forge.
+        </p>
+        <div class="choice-row">
+          <button id="desktopStart" class="choice">
+            <span>Desktop</span>
+            <small>WASD, mouse, space, shift, E</small>
+          </button>
+          <button id="mobileStart" class="choice">
+            <span>Mobile</span>
+            <small>Touch joystick, look pad, action buttons</small>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="hud" class="hud hidden">
+      <div class="topbar">
+        <div>
+          <div class="label">Quest</div>
+          <div id="questText" class="quest-text">Wake in the ash pit.</div>
+        </div>
+        <div class="ember-counter">
+          <span id="emberDots"></span>
+          <strong id="emberCount">0/3</strong>
+        </div>
+      </div>
+
+      <div id="prompt" class="prompt hidden"></div>
+      <div id="toast" class="toast hidden"></div>
+
+      <div id="desktopHelp" class="controls-help hidden">
+        <strong>Controls</strong>
+        WASD move / Mouse drag look / Space jump/glide / Shift dash / E heat/interact
+      </div>
+    </div>
+
+    <div id="mobileControls" class="mobile-controls hidden">
+      <div id="moveStick" class="stick"><div></div></div>
+      <div id="lookPad" class="look-pad"></div>
+      <div class="mobile-buttons">
+        <button id="mobileHeat">Heat</button>
+        <button id="mobileDash">Dash</button>
+        <button id="mobileJump">Jump</button>
+      </div>
+    </div>
+
+    <div id="ending" class="ending hidden">
+      <div>
+        <h2>The Great Forge Burns Again</h2>
+        <p>
+          Snow softens into green. Rust lifts his iron head. The foxes curl in the new
+          warmth. Somewhere inside the roaring heart, two soot-bright eyes blink.
+        </p>
+        <button id="restart">Play Again</button>
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
